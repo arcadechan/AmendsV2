@@ -12,7 +12,14 @@ body {
 }
 
 #header {
-    background-color: darkslategray;
+    background-color: #000;
+
+    #header-links {
+        a {
+            display: inline;
+            margin-left: 1rem;
+        }
+    }
 }
 
 #main {
