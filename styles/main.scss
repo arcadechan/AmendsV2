@@ -20,5 +20,20 @@ body {
 }
 
 #footer {
-    background-color: darkred
+    // background-color: darkred;
+
+    #badge-container {
+        max-width: 704px;
+        margin: 0 auto;
+
+        img {
+            display: inline;
+        }
+
+        #large-badges {
+            img {
+                max-width: 88px;
+            }
+        }
+    }
 }
