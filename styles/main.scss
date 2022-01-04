@@ -5,10 +5,15 @@
 $black: #1a1a1a;
 $white: #e4e4e4;
 
+hr {
+    border-color: #4a4a4a;
+}
+
 body {
     background-color: $black;
     color: $white;
     font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
 }
 
 #header {
@@ -23,7 +28,7 @@ body {
 }
 
 #main {
-    background-color: darkblue;
+    // background-color: darkblue;
 }
 
 #footer {

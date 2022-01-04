@@ -1,6 +1,6 @@
 const Main = ({children}) => {
     return (
-        <main id='main'>
+        <main id='main' className='p-5'>
             {children}
         </main>
     )
