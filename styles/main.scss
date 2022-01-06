@@ -5,20 +5,47 @@
 $black: #1a1a1a;
 $white: #e4e4e4;
 
+hr {
+    border-color: #4a4a4a;
+}
+
 body {
     background-color: $black;
     color: $white;
     font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
 }
 
 #header {
-    background-color: darkslategray;
+    background-color: #000;
+
+    #header-links {
+        a {
+            display: inline;
+            margin-left: 1rem;
+        }
+    }
 }
 
 #main {
-    background-color: darkblue;
+    // background-color: darkblue;
 }
 
 #footer {
-    background-color: darkred
+    // background-color: darkred;
+
+    #badge-container {
+        max-width: 704px;
+        margin: 0 auto;
+
+        img {
+            display: inline;
+        }
+
+        #large-badges {
+            img {
+                max-width: 88px;
+            }
+        }
+    }
 }
