@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Oxygen', 'sans-serif'],
-      'serif': ['EB Garamdon', 'serif']
+      'serif': ['EB Garamond', 'serif']
     }
   },
   plugins: [],
