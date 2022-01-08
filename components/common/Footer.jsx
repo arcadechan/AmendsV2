@@ -5,6 +5,7 @@ const Footer = () => {
 
     return (
         <footer id='footer' className='p-5'>
+            <hr />
             <div id='badge-container' className='text-center py-5'>
                 <div id='large-badges' className='mb-3'>
                     <img src='/badges/large/bestviewed.gif' alt='' />

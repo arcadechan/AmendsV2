@@ -5,7 +5,7 @@ const Header = () => {
         <header id='header' className="p-5 flex justify-between">
             <Link href='/' passHref>
                 <a id='header-logo' className=''>
-                    <img src="/AMENDS-white.png" alt="" className='w-28'/>
+                    <img src="/AMENDS-color.png" alt="" className='w-28'/>
                 </a>
             </Link>
             <div id='header-links' className='text-base'>
