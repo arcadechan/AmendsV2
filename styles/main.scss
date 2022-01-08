@@ -19,6 +19,15 @@ body {
 #header {
     background-color: #000;
 
+    #header-logo {
+        filter: hue-rotate(0deg);
+        animation: rainbow 5s forwards infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+
     #header-links {
         a {
             display: inline;
@@ -27,8 +36,13 @@ body {
     }
 }
 
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg) }
+    100% { filter: hue-rotate(360deg)}
+}
+
 #main {
-    // background-color: darkblue;
+    font-size: 14px;
 }
 
 #footer {

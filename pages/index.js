@@ -1,13 +1,23 @@
-import Head from '../components/Head';
-import Layout from '../components/Layout';
+import { Head, Layout } from '../components/common';
+import { HeroBanner, PinkyPromise } from '../components';
+import { attributes, react as HomeContent } from '../content/home.md';
 
 export default function Home() {
+  let heroBanner = false;
+  
+  if(attributes.hero_banner.image){
+    heroBanner = <HeroBanner {...attributes.hero_banner}/>;
+  }
+  
   return (
-    <Layout>
+    <>
+    <Layout heroBanner={heroBanner}>
       <Head />
-      <div>
-        <h1>Main Something</h1>
+      <div className='text-center'>
+        <HomeContent/>
+        <PinkyPromise className='block mx-auto w-full max-w-[8rem] mt-5'/>
       </div>
     </Layout>
+    </>
   )
 }

@@ -1,11 +1,10 @@
-import Header from "./Header"
-import Main from "./Main"
-import Footer from "./Footer"
+import { Header, Main, Footer } from "."
 
-const Layout = ({ children }) => {
+const Layout = ({ children, heroBanner }) => {
     return (
         <div className='container mx-auto max-w-screen-lg'>
             <Header/>
+            { heroBanner }
             <Main>{children}</Main>
             <Footer/>
         </div>
