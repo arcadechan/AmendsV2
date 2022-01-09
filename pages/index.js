@@ -10,7 +10,6 @@ export default function Home() {
   }
   
   return (
-    <>
     <Layout heroBanner={heroBanner}>
       <Head />
       <div className='text-center'>
@@ -18,6 +17,5 @@ export default function Home() {
         <PinkyPromise className='block mx-auto w-full max-w-[8rem] mt-5'/>
       </div>
     </Layout>
-    </>
   )
 }
