@@ -1,7 +1,7 @@
 Hello friend,
 <br/>
 <br/>
-**Amends** is a site dedicated to the discovery and analysis of all kinds of music. My goal is to hopefully introduce you to amazing stuff by talking about what I feel makes certain songs and artists great. I hope you enjoy the journey!
+**Amends** is a site dedicated to the discovery and analysis of all kinds of music, curious code findings, art, and everything in between. My goal is to hopefully introduce you to some amazing. I hope you enjoy the journey!
 <br/>
 <br/>
 Eternally yours,
