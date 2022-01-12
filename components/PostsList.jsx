@@ -6,8 +6,8 @@ const PostsList = ({ posts }) => {
     posts.length ? (
       <>
         {
-          posts.map( post => { 
-            return <PostCard post={post}/>
+          posts.map((post, i) => { 
+            return <PostCard post={post} key={i}/>
           })
         }
       </>
