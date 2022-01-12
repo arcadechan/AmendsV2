@@ -11,7 +11,7 @@ const About = () => {
 
   return (
     <Layout heroBanner={heroBanner}>
-      <Head />
+      <Head title='Amends - About'/>
       <div>
         <h1 className='page-title font-["Eb_Garamond"]'>About</h1>
         <AboutContent/>
