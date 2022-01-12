@@ -9,8 +9,12 @@ const Header = () => {
                 </a>
             </Link>
             <div id='header-links' className='text-base'>
-                <a href="/posts">Posts</a>
-                <a href="/about">About</a>
+                <Link href='/posts' passHref>
+                    <a>Posts</a>
+                </Link>
+                <Link href="/about" passHref>
+                    <a>About</a>
+                </Link>
             </div>
         </header>
     )
