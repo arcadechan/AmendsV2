@@ -1,7 +1,7 @@
 backend:
-  # name: git-gateway
-  name: test-repo #local testing
-  branch: main # Branch to update (optional; defaults to master)
+  name: git-gateway
+  # name: test-repo #local testing
+  branch: development # Branch to update (optional; defaults to master)
 media_folder: public/img
 public_folder: img
 collections:
