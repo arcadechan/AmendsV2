@@ -66,3 +66,33 @@ collections:
                 - { label: 'Enabled', name: 'enabled', widget: 'boolean', default: true, required: false }
                 - { label: 'Color', name: 'color', widget: 'color', allowInput: true, enableAlpha: true, default: '#000000', required: false }
         - { label: 'Body', name: 'body', widget: 'markdown' }
+  - label: 'Posts'
+    name: 'posts'
+    folder: 'content/posts/'
+    extension: 'md'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    identifier_field: slug
+    summary: '{{title}}'
+    fields:
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', dateFormat: 'YYYY-MM-DD', timeFormat: false }
+      - label: 'Tags'
+        label_singular: 'Tag'
+        name: 'tags'
+        widget: 'list'
+        summary: '{{fields.tag}}'
+        field:
+          label: 'Tag'
+          name: 'tag'
+          widget: 'relation'
+          collection: 'meta'
+          file: 'tags'
+          searchFields:
+            - 'tags.*.name'
+          displayFields:
+            - 'tags.*.name'
+          valueField: 'tags.*.slug'
+      - { label: 'Body', name: 'body', widget: 'markdown' }
