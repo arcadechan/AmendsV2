@@ -6,7 +6,7 @@ const HeroBanner = ({image, text, background_size, backdrop }, props) => {
 
     return (
         <div className={styles.herobanner} style={{ backgroundImage: `url(${image})`, backgroundSize: background_size }}>
-            <div className={`${styles.text} font-['Eb_Garamond']`}>
+            <div className={styles.text}>
                 { !!headline && (<h1 className='text-5xl'>{ headline }</h1>)}
                 { !!subtext && (<h3 className='text-3xl'>{ subtext }</h3>)}
             </div>
