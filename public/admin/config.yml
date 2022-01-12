@@ -26,7 +26,7 @@ collections:
             - label: 'Background Size'
               name: 'background_size'
               widget: 'select'
-              default: 'cover'
+              required: false
               options: 
                 - { label: 'Cover', value: 'cover' }
                 - { label: 'Contain', value: 'contain' }
@@ -55,7 +55,7 @@ collections:
             - label: 'Background Size'
               name: 'background_size'
               widget: 'select'
-              default: 'cover'
+              required: false
               options: 
                 - { label: 'Cover', value: 'cover' }
                 - { label: 'Contain', value: 'contain' }
