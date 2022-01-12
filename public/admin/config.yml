@@ -37,3 +37,32 @@ collections:
                 - { label: 'Enabled', name: 'enabled', widget: 'boolean', default: true, required: false }
                 - { label: 'Color', name: 'color', widget: 'color', allowInput: true, enableAlpha: true, default: '#000000', required: false }
         - { label: 'Body', name: 'body', widget: 'markdown' }
+    - label: "About"
+      name: "about"
+      file: "content/about.md"
+      fields:
+        - label: 'Hero Banner'
+          name: 'hero_banner'
+          widget: 'object'
+          fields:
+            - { label: 'Image', name: 'image', widget: image, required: false }
+            - label: 'text'
+              name: 'text'
+              widget: 'object'
+              fields:
+                - { label: 'Headline', name: 'headline', widget: 'text', required: false }
+                - { label: 'Subtext', name: 'subtext', widget: 'text', required: false }
+            - label: 'Background Size'
+              name: 'background_size'
+              widget: 'select'
+              default: 'cover'
+              options: 
+                - { label: 'Cover', value: 'cover' }
+                - { label: 'Contain', value: 'contain' }
+            - label: 'Backdrop'
+              name: 'backdrop'
+              widget: 'object'
+              fields:
+                - { label: 'Enabled', name: 'enabled', widget: 'boolean', default: true, required: false }
+                - { label: 'Color', name: 'color', widget: 'color', allowInput: true, enableAlpha: true, default: '#000000', required: false }
+        - { label: 'Body', name: 'body', widget: 'markdown' }
