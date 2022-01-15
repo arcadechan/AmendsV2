@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+$black: #1a1a1a;
+$white: #e4e4e4;
+$free: 'Free Pixel';
+$averia: 'AveriaSerif-Regular';
+$oldsh: 'OLDSH___';
+
 @layer base {
+    @font-face {
+        font-family: 'FreePixel';
+        font-display: swap;
+        src: url('/fonts/FreePixel.ttf') format('truetype');
+    }   
+
+    @font-face {
+        font-family: 'OLDSH___';
+        font-display: swap;
+        font-style: normal;
+        src: url('/fonts/OLDSH___.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'OLDSH__';
+        font-display: swap;
+        font-style: italic;
+        src: url('/fonts/OLDSH__.ttf') format('truetype');
+    }
+
     * {
         box-sizing: border-box;
     }
@@ -15,7 +41,8 @@
     h6 { @apply text-lg }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'EB Garamond'
+        font-family: $oldsh, 'Times New Roman', Times, serif;
+        letter-spacing: 2px;
     }
 
     ul {
@@ -24,9 +51,6 @@
     }
 }
 
-$black: #1a1a1a;
-$white: #e4e4e4;
-
 hr {
     border-color: #4a4a4a;
 }
@@ -34,17 +58,17 @@ hr {
 body {
     background-color: $black;
     color: $white;
-    font-family: 'Oxygen', sans-serif;
-
-    p, span, li {
-        font-size: 12px;
-    }
+    font-family: $free, 'Courier New', Courier, monospace, sans-serif;
+    line-height: 1.5rem;
+    font-size: 16px;
+    font-weight: lighter;
 }
 
 #header {
     background-color: #000;
     position: sticky;
     top: 0;
+    z-index: 10;
 
     #header-logo {
         filter: hue-rotate(0deg);
@@ -68,11 +92,7 @@ body {
     100% { filter: hue-rotate(360deg)}
 }
 
-#main {
-    p, span, li {
-        font-size: 14px;
-    }
-}
+// #main {}
 
 #footer {
     // background-color: darkred;

@@ -15,6 +15,11 @@ const PostsList = ({ posts }) => {
             return <PostCard post={post} key={i}/>
           })
         }
+        <div className='block md:hidden mt-5'>
+          <Link href='/' passHref>
+            <a className='block text-center underlined-link'>Back Home</a>
+          </Link>
+        </div>
       </>
     ) : (
       <div className='my-32'>
