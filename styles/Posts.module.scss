@@ -1,0 +1,11 @@
+$black: #1a1a1a;
+$white: #e4e4e4;
+
+.postcard {
+  background-color: lighten($black, 5%);
+  border-left: solid 2px rgba(0,0,0,0);
+
+  &:hover {
+    border-color: lighten($black, 25%);
+  }
+}

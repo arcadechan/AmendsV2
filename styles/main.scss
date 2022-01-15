@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    * {
+        box-sizing: border-box;
+    }
+
     h1 { @apply text-5xl }
     h2 { @apply text-4xl }
     h3 { @apply text-3xl }
@@ -39,6 +43,8 @@ body {
 
 #header {
     background-color: #000;
+    position: sticky;
+    top: 0;
 
     #header-logo {
         filter: hue-rotate(0deg);
@@ -92,4 +98,9 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+}
+
+.underlined-link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
