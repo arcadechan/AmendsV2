@@ -1,7 +1,6 @@
 import styles from '../styles/HeroBanner.module.scss'
 
 const HeroBanner = ({image, text, background_size, backdrop }, props) => {
-    console.log({props})
     const { headline, subtext } = text
 
     return (
