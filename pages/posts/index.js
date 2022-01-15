@@ -4,11 +4,6 @@ import { promises as fs } from 'fs'
 import * as matter from 'gray-matter'
 import path from 'path'
 
-// const getAllPosts = async dir => {
-//   const files = await fs.readdir(dir, 'utf8');
-//   console.log({files});
-// }
-
 export async function getStaticProps() {
   const postsDir = path.join(process.cwd(), 'content/posts')
   const filenames = await fs.readdir(postsDir)
@@ -16,17 +11,18 @@ export async function getStaticProps() {
   const posts = await Promise.all(
     filenames.map(async filename => {
       const filePath = path.join(postsDir, filename)
-      const fileContents = await fs.readFile(filePath, 'utf8')
-      const { content, data, excerpt } = matter(fileContents)
+      const { content, data } = matter.read(filePath)
       
       return {
         filename,
         content,
-        data,
-        excerpt
+        data
       }
     })
   )
+
+  // Sort newest to oldest
+  posts.sort((a,b) => a.data.date > b.data.date ? -1 : 1);
 
   return {
     props: { posts }
