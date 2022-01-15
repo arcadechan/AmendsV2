@@ -1,10 +1,15 @@
-import Link from "next/link"
+import Link from 'next/link'
 import { PostCard } from '/components'
 
 const PostsList = ({ posts }) => {
   return (
     posts.length ? (
       <>
+        <div className='mt-5'>
+          <Link href='/' passHref>
+            <a className='block text-center underlined-link'>Back Home</a>
+          </Link>
+        </div>
         {
           posts.map((post, i) => { 
             return <PostCard post={post} key={i}/>
