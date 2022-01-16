@@ -8,5 +8,42 @@
 </head>
 <body>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    CMS.registerEditorComponent({
+      id: 'music-post-with-audio-preview',
+      label: 'Post w/ audio preview',
+      fields: [
+        {
+          name: 'SpotifyTrackCode',
+          label: 'Spotify Track Code',
+          widget: 'string'
+        },
+        {
+          name: 'MarkdownContent',
+          label: 'MarkdownContent',
+          widget: 'markdown'
+        }
+      ],
+      pattern: /^<SpotifyTrackCode>(.*?)<\/SpotifyTrackCode>\n\n$<MarkdownContent>(.*?)<\/MarkdownContent>/ms,
+      fromBlock: function(match){
+        return {
+          'SpotifyTrackCode': match[1],
+          'MarkdownContent': match[2]
+        }
+      },
+      toBlock: function(data) {
+        return `
+          <SpotifyTrackCode>${data['SpotifyTrackCode']}</SpotifyTrackCode>
+          <MarkdownContent>${data['MarkdownContent']}</MarkdownContent>
+        `;
+      },
+      toPreview: function(data) {
+        return `
+          <SpotifyTrackCode>${data['SpotifyTrackCode']}</SpotifyTrackCode>
+          <MarkdownContent>${data['MarkdownContent']}</MarkdownContent>
+        `;
+      }
+    });
+  </script>
 </body>
 </html>
