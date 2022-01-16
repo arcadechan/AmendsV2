@@ -3,6 +3,8 @@ import { Post } from '/components'
 import matter from 'gray-matter'
 import { promises as fs } from 'fs'
 import path from 'path'
+import Markdown from "markdown-to-jsx"
+import AudioPreview from '/components/AudioPreview'
 
 export const getStaticProps = async ({...ctx}) => {
   const { slug } = ctx.params;
@@ -38,7 +40,17 @@ const BlogPost = ({ content, data }) => {
   return (
     <Layout>
       <Head title={`Amends - ${title}`}/>
-      <Post content={content} date={date} title={title}/>
+      <Post date={date} title={title}> 
+        <Markdown
+            options={{
+              overrides: {
+                'SpotifyCode': AudioPreview
+              }
+            }}
+          >
+            {content}
+        </Markdown>
+      </Post>
     </Layout>
   )
 }
