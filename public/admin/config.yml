@@ -78,6 +78,6 @@ collections:
     fields:
       - { label: 'Slug', name: 'slug', widget: 'string' }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', dateFormat: 'YYYY-MM-DD', timeFormat: false }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
       - { label: 'Excerpt', name: 'excerpt', widget: 'text', required: false }
       - { label: 'Content', name: 'content', widget: 'markdown' }
