@@ -1,8 +1,9 @@
 import { Head, Layout } from '/components/common'
-import { Post } from '/components'
+import { Post, AudioPreview } from '/components'
 import matter from 'gray-matter'
 import { promises as fs } from 'fs'
 import path from 'path'
+import Markdown from 'markdown-to-jsx'
 
 export const getStaticProps = async ({...ctx}) => {
   const { slug } = ctx.params;
@@ -44,7 +45,17 @@ const BlogPost = ({ content, data }) => {
   return (
     <Layout>
       <Head title={`Amends - ${title}`}/>
-      <Post content={content} date={date} title={title}/>
+      <Post date={date} title={title}>
+        <Markdown 
+          options={{
+            overrides: {
+              'spotifytrackcode': AudioPreview
+            }
+          }}
+        >
+          {content}
+        </Markdown>
+      </Post>
     </Layout>
   )
 }

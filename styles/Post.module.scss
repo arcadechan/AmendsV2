@@ -1,0 +1,16 @@
+.postcontainer {
+  background: red;
+  .postcontent {
+    background: blue;
+    margin: 2rem 0;
+
+    .audiopreview {
+      background: green;
+      margin: 1rem 0;
+    }
+
+    hr {
+      margin: 1rem 0;
+    }
+  }
+}
