@@ -8,5 +8,40 @@
 </head>
 <body>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    const spotifyTrackURI = 'https://open.spotify.com/track/';
+    CMS.registerEditorComponent({
+      id: 'spotifytrackcode',
+      label: 'Spotify Track Code',
+      fields: [
+        {
+          name: 'spotifytrackcode',
+          label: 'Full Track URI or Code',
+          widget: 'string'
+        }
+      ],
+      pattern: /^<spotifytrackcode>(.*?)<\/spotifytrackcode>/ms,
+      fromBlock: function(match){
+        return {
+          'spotifytrackcode': match[1]
+        }
+      },
+      toBlock: function(data) {
+        let code = data['spotifytrackcode'] || '';
+        let parsed = '';
+
+        if(code.length > 1 && code.includes(spotifyTrackURI)){
+          parsed = code.replace(spotifyTrackURI, '').replace(/\?.*$/g, '');
+          code = parsed;
+        }
+
+        return `<spotifytrackcode>${code}</spotifytrackcode>`;
+      },
+      toPreview: function(data) {
+        const code = data['spotifytrackcode'] || '';
+        return `<spotifytrackcode>${code}</spotifytrackcode>`;
+      }
+    });
+  </script>
 </body>
 </html>
