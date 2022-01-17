@@ -86,4 +86,7 @@ collections:
         fields:
           - { label: 'Spotify URI', name: 'spotify_uri', widget: 'string' }
           - { label: 'Content', name: 'content', widget: 'string', required: false }
+      - label: 'Custom Markdown'
+        name: 'custom_markdown'
+        widget: 'markdown'
       - { label: 'Body', name: 'body', widget: 'markdown' }
