@@ -11,12 +11,16 @@ export async function getStaticProps() {
   const posts = await Promise.all(
     filenames.map(async filename => {
       const filePath = path.join(postsDir, filename)
-      const { content, data } = matter.read(filePath)
-      
+      const { data: { title, date, excerpt, content } } = matter.read(filePath)
+
       return {
-        filename,
-        content,
-        data
+        data: {
+          slug: filename.replace('.md', ''),
+          title,
+          date: date.toISOString().split('T')[0],
+          excerpt,
+          content
+        }
       }
     })
   )

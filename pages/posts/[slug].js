@@ -6,12 +6,18 @@ import path from 'path'
 
 export const getStaticProps = async ({...ctx}) => {
   const { slug } = ctx.params;
-  const { content, data } = matter.read(`content/posts/${slug}.md`);
+  const { data: { title, date, excerpt, content  } } = matter.read(`content/posts/${slug}.md`);
 
   return {
     props: {
       content,
-      data
+      data: {
+        slug,
+        title,
+        date: date.toISOString().split('T')[0],
+        excerpt,
+        content
+      }
     }
   }
 }
