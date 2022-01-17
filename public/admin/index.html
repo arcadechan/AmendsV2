@@ -11,43 +11,35 @@
   <script>
     const spotifyTrackURI = 'https://open.spotify.com/track/';
     CMS.registerEditorComponent({
-      id: 'spotify-track-code',
+      id: 'spotifytrackcode',
       label: 'Spotify Track Code',
       fields: [
         {
-          name: 'SpotifyTrackCode',
-          label: 'Code',
+          name: 'spotifytrackcode',
+          label: 'Full Track URI or Code',
           widget: 'string'
         }
       ],
-      pattern: /^<SpotifyTrackCode>(.*?)<\/SpotifyTrackCode>/ms,
+      pattern: /^<spotifytrackcode>(.*?)<\/spotifytrackcode>/ms,
       fromBlock: function(match){
-        console.log('fromBlock match', {match});
         return {
-          'SpotifyTrackCode': match[1]
+          'spotifytrackcode': match[1]
         }
       },
       toBlock: function(data) {
-        console.log('toBlock data', {data});
-        let code = data['SpotifyTrackCode'] || '';
+        let code = data['spotifytrackcode'] || '';
         let parsed = '';
-        // https://open.spotify.com/track/448VvOvA98UjV8XsGaTvue?si=c4eee12e3f9c4bbe
+
         if(code.length > 1 && code.includes(spotifyTrackURI)){
-          parsed = code.replace(spotifyTrackURI, '').replace(/\?si.*$/g, '');
+          parsed = code.replace(spotifyTrackURI, '').replace(/\?.*$/g, '');
           code = parsed;
         }
 
-        return `
-          ahhh
-          <SpotifyTrackCode>${code}</SpotifyTrackCode>
-        `;
+        return `<spotifytrackcode>${code}</spotifytrackcode>`;
       },
       toPreview: function(data) {
-        console.log('toPreview data', {data});
-        const code = data['SpotifyTrackCode'] || '';
-        return `
-          <SpotifyTrackCode>${code}</SpotifyTrackCode>
-        `;
+        const code = data['spotifytrackcode'] || '';
+        return `<spotifytrackcode>${code}</spotifytrackcode>`;
       }
     });
   </script>
